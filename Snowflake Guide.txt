@@ -1,0 +1,51 @@
+1) Snowflake is Cloud Based Data Warehouse
+
+2) It Provide services like data Storage, Processing and Analytics.
+
+3) ETL and ELT - Extract, Transform, Load - Same concept but Steps is difference - In Transform it will check the data's is formated or not is every key is proper n all or it will remove the duplicate data's. 
+
+4) Credits Systems - XS-1-Credit, S-2, M-4, L-8, XL-16, 4XL-128
+
+5) While Creating the Warehouse set setting of timer if the warehouse is not in us for, lets suppose 5 min then is Automatically suspend  
+
+6) For Business Critical it's Provide more Security
+
+7) Resource Monitors - Control and Monitors credit usage of warehouse and account - We can create for account level also and Individual Warehouse also 
+
+8) When we have to Access Stages then we need to use @ example: @aws_stage
+
+9) CAST Functions is use for the changing the Data Type
+
+10) For Optimization from our side - Assigning Data types, Sizing Warehouse, Cluster Keys, Create Dedicated Warehouse
+
+11)CREATE OR REPLACE WAREHOUSE SECOND_WH
+   WITH
+   WAREHOUSE_SIZE = XSMALL
+   AUTO_SUSPEND = 300
+   MIN_CLUSTER_COUNT = 1
+   MAX_CLUSTER_COUNT = 3
+   INITIALLY_SUSPENDED = TRUE
+   COMMENT = "This is Second Cluster"
+
+   ALTER WAREHOUSE SECOND_WH SUSPEND/RESUME
+
+    create table first_table (
+    first_column INT,
+    second_column TEXT
+    -- , <col2_name> <col2_type>
+    -- supported types: https://docs.snowflake.com/en/sql-reference/intro-summary-data-types
+    )
+    comment = 'This is out First Table';
+    SELECT * FROM first_table;
+
+
+
+
+
+
+
+
+
+Interview Questions
+Neeraj GitHub
+YouTube Complete - Roles n all, Point by Points, What is Cluster in Snowflake
