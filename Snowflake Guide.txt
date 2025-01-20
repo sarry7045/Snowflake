@@ -1,16 +1,16 @@
 1) Snowflake is Cloud Based Data Warehouse
 
-2) It Provide services like data Storage, Processing and Analytics.
+2) It Provide services like Data Storage, Processing and Analytics.
 
-3) ETL and ELT - Extract, Transform, Load - Same concept but Steps is difference - In Transform it will check the data's is formated or not is every key is proper n all or it will remove the duplicate data's. 
+3) ETL and ELT - Extract, Transform, Load - Same concept but Steps is difference - In Transform it will check the data's is formated or not is every key is proper n all or it will remove the duplicate data's etc.
 
-4) Credits Systems - XS-1-Credit, S-2, M-4, L-8, XL-16, 4XL-128
+4) Credit Systems while Creating Warehouse - XS-1-Credit, S-2, M-4, L-8, XL-16, 4XL-128
 
-5) While Creating the Warehouse set setting of timer if the warehouse is not in us for, lets suppose 5 min then is Automatically suspend  
+5) While Creating the Warehouse set setting of timer if the warehouse is not in use, lets suppose 5 min then is Automatically suspend, then we have to manually run that Warehouse
 
-6) For Business Critical it's Provide more Security
+6) For Business type Account it's Provide more Security
 
-7) Resource Monitors - Control and Monitors credit usage of warehouse and account - We can create for account level also and Individual Warehouse also 
+7) Resource Monitors - Control and Monitors credit usage of warehouse and account - We can create RS for account level also and Individual Warehouse also 
 
 8) When we have to Access Stages then we need to use @ example: @aws_stage
 
@@ -18,34 +18,27 @@
 
 10) For Optimization from our side - Assigning Data types, Sizing Warehouse, Cluster Keys, Create Dedicated Warehouse
 
-11)CREATE OR REPLACE WAREHOUSE SECOND_WH
-   WITH
-   WAREHOUSE_SIZE = XSMALL
-   AUTO_SUSPEND = 300
-   MIN_CLUSTER_COUNT = 1
-   MAX_CLUSTER_COUNT = 3
-   INITIALLY_SUSPENDED = TRUE
-   COMMENT = "This is Second Cluster"
+11) Everything Stores in Warehouses Like Tables, Data's, Cluster's etc.
 
-   ALTER WAREHOUSE SECOND_WH SUSPEND/RESUME
-
-    create table first_table (
-    first_column INT,
-    second_column TEXT
-    -- , <col2_name> <col2_type>
-    -- supported types: https://docs.snowflake.com/en/sql-reference/intro-summary-data-types
-    )
-    comment = 'This is out First Table';
-    SELECT * FROM first_table;
+12) Roles - AccountAdmin handle's SecurityAdmin, SystemAdmin Features, then SecurityAdmin manage's UserAdmin, then SystemAdmin can Create Warehouses, Databases, then In OrganizationAdmin handle's Top Level Things
 
 
+13) Snowflake fail-safe - It means it perform the data backup on daily basis , to secure our data if we mesh something but this process is expensive and time consuming
 
+14) Snowflake Snowpipe - It use for the continuously loading data into Snowflake table, and Its Serverless
 
+15) Zero Copy Cloning - It's a feature which provide the easy way to copy the table, schema, or database without any costs.
 
+16) Stream  It's a feature where we can track the changes in the data for a table, Standard - Append Only - Insert only
 
+17) Time Travel - Basically we can find the old data from here. MAX 90 days Old from Permanent table, SELECT CURRENT_TIMESTAMP
 
+18) show SCHEMAS history 
 
+19) Restore the Deleted Databases - undrop database (database_name)
 
-Interview Questions
-Neeraj GitHub
-YouTube Complete - Roles n all, Point by Points, What is Cluster in Snowflake
+20) Command for Bulk Loading - COPY INTO <table>
+
+21) Clustering Key - Subsets of Columns - basically for proper identification - Once we give the clutser key to database then only the clustering is enabled.
+
+22) Cluster - Grouping a Bunch of Values into a record
