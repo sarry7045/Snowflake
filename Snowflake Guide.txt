@@ -22,16 +22,15 @@
 
 12) Roles - AccountAdmin handle's SecurityAdmin, SystemAdmin Features, then SecurityAdmin manage's UserAdmin, then SystemAdmin can Create Warehouses, Databases, then In OrganizationAdmin handle's Top Level Things
 
-
 13) Snowflake fail-safe - It means it perform the data backup on daily basis , to secure our data if we mesh something but this process is expensive and time consuming
 
 14) Snowflake Snowpipe - It use for the continuously loading data into Snowflake table, and Its Serverless
 
 15) Zero Copy Cloning - It's a feature which provide the easy way to copy the table, schema, or database without any costs.
 
-16) Stream  It's a feature where we can track the changes in the data for a table, Standard - Append Only - Insert only
-
-17) Time Travel - Basically we can find the old data from here. MAX 90 days Old from Permanent table, SELECT CURRENT_TIMESTAMP
+16) Stream  It's a feature where we can track the changes in the data for a table, Standard - Append Only - Insert only - It's also called as Change Data Capture (CDC).
+17) Time Travel - Basically we can find the old data from here. MAX 90 days Old from Permanent table, SELECT CURRENT_TIMESTAMP - Table, Database, Schemas - We can restore also and make a          clone also
+SELECT * FROM PART before (statement => 'your-query-id');
 
 18) show SCHEMAS history 
 
@@ -42,3 +41,27 @@
 21) Clustering Key - Subsets of Columns - basically for proper identification - Once we give the clutser key to database then only the clustering is enabled.
 
 22) Cluster - Grouping a Bunch of Values into a record
+
+23) Materialized Views - Means Suppose we applies multiple filter to find data's and we can save that data as buffer/cache for future use. So we don't hit the big query again n again
+
+24) CLONE - Zero Copy Clone
+
+25) Swapping - ALTER TABLE table_name
+               SWAP WITH target_table_name
+
+26) SHARE - Use  for Sharing the data
+
+27) Data Products > Private Sharing > Shared by Your Account > Now we can change our data and also we can add more consumers to data access.
+
+28) Data Sampling Methods - It's Load Data fastley ROW or BERNOULII Method and BLOCK or SYSTEM Method -  SAMPLE ROW (1) SEED(27), SAMPLE SYSTEM (10) SEED(23);
+                            ROWS give's the better data.
+
+
+29) Best Practices - Warehouse - Enable Auto Suspend and Auto Resume, Set Appropriate timeouts, Choose size based on workload 
+                     Table Design - Set Cluster Keys when data is large
+
+30) TASK - Use for Scheduling the Task.
+
+
+
+Remaining Sections - 21, 22, 23
