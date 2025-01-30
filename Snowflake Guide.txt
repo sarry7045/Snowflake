@@ -43,6 +43,7 @@ SELECT * FROM PART before (statement => 'your-query-id');
 22) Cluster - Grouping a Bunch of Values into a record
 
 23) Materialized Views - Means Suppose we applies multiple filter to find data's and we can save that data as buffer/cache for future use. So we don't hit the big query again n again
+Don't use MV when data changes very frequent, Maintenance Cost high, Alternative is Stream and
 
 24) CLONE - Zero Copy Clone
 
@@ -62,6 +63,4 @@ SELECT * FROM PART before (statement => 'your-query-id');
 
 30) TASK - Use for Scheduling the Task.
 
-
-
-Remaining Sections - 21, 22, 23
+31) Data Masking - Meand We can see the data in *** View - Example : 1234 to ****
